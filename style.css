@@ -1,3 +1,4 @@
+/* Generales */
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +16,8 @@ body.light {
   color: black;
 }
 
+/* Header */
+
 header {
   grid-area: header;
 }
@@ -25,7 +28,7 @@ li {
 }
 
 nav {
-  background-color: grey;
+  background-color: #8B0000;
   width: 100%;
   padding: 20px;
   display: flex;
@@ -72,6 +75,8 @@ nav>img {
   cursor: pointer;
 
 }
+
+/* Aside */
 
 aside {
   align-items: center;
@@ -124,6 +129,8 @@ aside {
   display: flex;
 }
 
+/* main */
+
 .grid-container {
   display: grid;
   grid-template-areas:
@@ -134,7 +141,6 @@ aside {
   grid-template-rows: auto 1fr auto;
 
 }
-
 
 main {
   margin: 20px;
@@ -164,10 +170,70 @@ article:hover {
 }
 
 
-
+/* Footer */
 footer {
   padding: 20px;
   text-align: center;
   justify-items: center;
   font-size: 16pt;
+}
+
+/* Medias querys */
+
+@media (max-width: 940px) {
+
+  .nav-list {
+    display: none;
+  }
+
+  /* .menu {
+    display: block;
+  } */
+
+  .menu img {
+    width: 100px;
+    height: auto;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "aside main"
+      "footer footer";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto 1fr auto;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "header "
+      "aside "
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  footer {
+    display: block;
+    width: 100%;
+    margin: auto;
+    padding: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer>p {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+  }
+
 }
